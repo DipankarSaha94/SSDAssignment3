@@ -1,5 +1,8 @@
 # SSDAssignment3
 
+## GitHub link
+* `https://github.com/DipankarSaha94/SSDAssignment3`
+
 ## Question 1
 
 * I have assumed user input i.e. Emp id of two employee will be given as space seperated.
