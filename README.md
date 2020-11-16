@@ -41,3 +41,20 @@
 * Here i am reading all the 5 text files containing employee time schedule and giving output as per the input given by the user like if 4 employee to consider the input will be `3 .5` i.e. no of employee to consider is 4 and common time required is 30 min. For each Employee i am generating the free slots and later on checking all the free slots to find the common available slot.
 
 * No of lines added in the code is from 170 to 220 and 280 to 310. 
+
+# SSD Assignment 3c
+
+## GitHub link
+* `https://github.com/DipankarSaha94/SSDAssignment3`
+
+## Question 1
+
+* The function `answer` is divided into 5 different functions as `answer`,`getplist`,`findleader1`,`findleader2`,`findleader3` and used lambda function instead of multiple if else loop to achieve the complexity A.
+
+## Question 2
+
+* I have reduced the multiple if else loop by help of a list check in `changeformat` function. And divide the function `getDifference` into 2 function `getDifference`,`noofdays` to do the repetitive task to achieve the ideal complexity A.
+
+## Question 3
+
+* have deleted the repetitive part in `addtime` function by reducing the argument passed into it to get the final complexity A. 
