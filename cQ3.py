@@ -54,11 +54,11 @@ def findslot5(dt1,dt2,dt3,dt4,dt5,dt6,dt7,dt8,dt9,dt10,h,m):
 from datetime import datetime,timedelta
 import json
 
-file1 = open('/content/sample_data/E1.txt','r')
-file2 = open('/content/sample_data/E2.txt','r')
-file3 = open('/content/sample_data/E3.txt','r')
-file4 = open('/content/sample_data/E4.txt','r')
-file5 = open('/content/sample_data/E5.txt','r')
+file1 = open('/home/dipankar/Downloads/E1.txt','r')
+file2 = open('/home/dipankar/Downloads/E2.txt','r')
+file3 = open('/home/dipankar/Downloads/E3.txt','r')
+file4 = open('/home/dipankar/Downloads/E4.txt','r')
+file5 = open('/home/dipankar/Downloads/E5.txt','r')
 
 str1 = file1.read()
 jsonstr = str1.replace('\'','\"')
@@ -114,14 +114,16 @@ for k1,v1 in dict1.items():
       listo1.append(datetime.strptime(s2," %I:%M%p"))
 
 if(listo1[0]>a1):
-  flist1.append(addtime(a1,listo1[0]))
+  s1,s2 = addtime(a1),addtime(listo1[0])
+  s3 = s1+" - "+s2
+  flist1.append(s3)
 i,l1 = 1,len(listo1)  
 while i<(l1 - 1):
   if(listo1[i] != listo1[i+1]):
-    flist1.append(addtime(listo1[i],listo1[i+1]))
+    flist1.append(addtime(listo1[i])+' - '+addtime(listo1[i+1]))
   i += 2
 if(listo1[l1-1]<a2):
-  flist1.append(addtime(listo1[l1-1],a2))
+  flist1.append(addtime(listo1[l1-1])+' - '+addtime(a2))
 
 ## for 2nd eomployee
 for k1,v1 in dict2.items():
@@ -135,14 +137,14 @@ for k1,v1 in dict2.items():
 
 
 if(listo2[0]>a1):
-  flist2.append(addtime(a1,listo2[0]))
+  flist2.append(addtime(a1)+' - '+addtime(listo2[0]))
 i,l2 = 1,len(listo2)  
 while i<(l2 - 1):
   if(listo2[i] != listo2[i+1]):
-    flist2.append(addtime(listo2[i],listo2[i+1]))
+    flist2.append(addtime(listo2[i])+' - '+addtime(listo2[i+1]))
   i += 2
 if(listo2[l2-1]<a2):
-  flist2.append(addtime(listo2[l2-1],a2))
+  flist2.append(addtime(listo2[l2-1])+' - '+addtime(a2))
 
 
 ## for 3nd eomployee
@@ -157,14 +159,14 @@ for k1,v1 in dict3.items():
 
 
 if(listo3[0]>a1):
-  flist3.append(addtime(a1,listo3[0]))
+  flist3.append(addtime(a1)+' - '+addtime(listo3[0]))
 i,l3 = 1,len(listo3)  
 while i<(l3 - 1):
   if(listo3[i] != listo3[i+1]):
-    flist3.append(addtime(listo3[i],listo3[i+1]))
+    flist3.append(addtime(listo3[i])+' - '+addtime(listo3[i+1]))
   i += 2
 if(listo3[l3-1]<a2):
-  flist3.append(addtime(listo3[l3-1],a2))
+  flist3.append(addtime(listo3[l3-1])+' - '+addtime(a2))
 
 
 ## for 4th eomployee
@@ -179,14 +181,14 @@ for k1,v1 in dict4.items():
 
 
 if(listo4[0]>a1):
-  flist4.append(addtime(a1,listo4[0]))
+  flist4.append(addtime(a1)+' - '+addtime(listo4[0]))
 i,l4 = 1,len(listo4)  
 while i<(l4 - 1):
   if(listo4[i] != listo4[i+1]):
-    flist4.append(addtime(listo4[i],listo4[i+1]))
+    flist4.append(addtime(listo4[i])+' - '+addtime(listo4[i+1]))
   i += 2
 if(listo4[l4-1]<a2):
-  flist4.append(addtime(listo4[l4-1],a2))
+  flist4.append(addtime(listo4[l4-1])+' - '+addtime(a2))
 
 
 ## for 5th eomployee
@@ -201,16 +203,15 @@ for k1,v1 in dict5.items():
 
 
 if(listo5[0]>a1):
-  flist5.append(addtime(a1,listo5[0]))
+  flist5.append(addtime(a1)+' - '+addtime(listo5[0]))
 i,l5 = 1,len(listo5)  
 while i<(l5 - 1):
   if(listo5[i] != listo5[i+1]):
-    flist5.append(addtime(listo5[i],listo5[i+1]))
+    flist5.append(addtime(listo5[i])+' - '+addtime(listo5[i+1]))
   i += 2
 if(listo5[l5-1]<a2):
-  flist5.append(addtime(listo5[l5-1],a2))
+  flist5.append(addtime(listo5[l5-1])+' - '+addtime(a2))
 
-#redefine date object list for employee
 listo1.clear()
 listo2.clear()
 listo3.clear()
@@ -237,8 +238,6 @@ for i in flist5:
   s1,s2 = i.split('-')
   listo5.append(datetime.strptime(s1,"%I:%M%p "))
   listo5.append(datetime.strptime(s2," %I:%M%p"))
-
-
 
 l1,l2,l3,l4,l5 = len(listo1) - 1,len(listo2) - 1,len(listo3) - 1,len(listo4) - 1,len(listo5) - 1
 res3=""
@@ -293,7 +292,7 @@ if(type(res3) != str):
 
 
 n1 += ': [\''
-file_wr = open('/content/sample_data/output.txt','a')
+file_wr = open('/home/dipankar/Downloads/output.txt','a')
 file_wr.write("Available slot")
 file_wr.write('\n')
 file_wr.write(n1)
