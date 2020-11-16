@@ -57,4 +57,4 @@
 
 ## Question 3
 
-* have deleted the repetitive part in `addtime` function by reducing the argument passed into it to get the final complexity A. 
+* have deleted the repetitive part in `addtime` function by reducing the argument passed into it, to get the final complexity A. 
